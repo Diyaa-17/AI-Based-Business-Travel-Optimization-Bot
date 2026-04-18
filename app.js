@@ -2,19 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const chatContainer = document.getElementById('chat-container');
     const userInput = document.getElementById('user-input');
     const sendBtn = document.getElementById('send-btn');
-    const apiKeyInput = document.getElementById('api-key');
     const quickReplies = document.querySelectorAll('.quick-reply');
-
-    // Restore API key if saved in session
-    const savedKey = sessionStorage.getItem('gemini_api_key');
-    if (savedKey) {
-        apiKeyInput.value = savedKey;
-    }
-
-    // Save API key on change
-    apiKeyInput.addEventListener('change', (e) => {
-        sessionStorage.setItem('gemini_api_key', e.target.value.trim());
-    });
 
     // Auto-resize textarea
     userInput.addEventListener('input', function () {
@@ -120,13 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const text = userInput.value.trim();
         if (!text) return;
 
-        const apiKey = apiKeyInput.value.trim() || sessionStorage.getItem('gemini_api_key');
-
-        if (!apiKey) {
-            alert('Please enter your API key in the sidebar to use the chatbot.');
-            apiKeyInput.focus();
-            return;
-        }
+        const apiKey = "AIzaSyA-BUx6QKcIRLVKOmHOnpVPEH0mxCQjF5o";
 
         // Add user message to UI and history
         appendMessage('user', text);
