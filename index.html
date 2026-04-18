@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TravelOptima - Business Journey Chat</title>
+    <!-- Use Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2><i class="fa-solid fa-plane-departure"></i> TravelOptima</h2>
+            </div>
+            <button class="new-chat-btn" onclick="location.reload()"><i class="fa-solid fa-plus"></i> New
+                Journey</button>
+            <div class="recent-chats">
+                <h3>Recent Plans</h3>
+                <ul>
+                    <li><i class="fa-regular fa-message"></i> NYC Conference Trip</li>
+                    <li><i class="fa-regular fa-message"></i> Q3 London Visits</li>
+                    <li><i class="fa-regular fa-message"></i> Tokyo Client Meet</li>
+                </ul>
+            </div>
+
+            <div class="api-key-container">
+                <label for="api-key"><i class="fa-solid fa-key"></i> Gemini API Key:</label>
+                <input type="password" id="api-key" placeholder="AIza..."
+                    value="AIzaSyB6TywChO-DPgBF3KafB0LEp75yvRuiTvE" autocomplete="off">
+                <small>Stored locally in session.</small>
+            </div>
+        </aside>
+
+        <!-- Main Chat Area -->
+        <main class="chat-main">
+            <header class="chat-header">
+                <h1>Business Travel Assistant</h1>
+                <p>AI-Powered Corporate Itinerary & Cost Optimization</p>
+            </header>
+
+            <div class="chat-container" id="chat-container">
+                <!-- Initial Bot Message -->
+                <div class="message bot-message">
+                    <div class="avatar"><i class="fa-solid fa-robot"></i></div>
+                    <div class="bubble">
+                        <p>Welcome to TravelOptima. I can help you plan your upcoming business trips, find the best
+                            flight options, optimize your hotel stay against your budget, and build comprehensive
+                            itineraries. Where are you heading to next?</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Input Area -->
+            <div class="input-area">
+                <div class="quick-replies" id="quick-replies">
+                    <button class="quick-reply">Plan a 3-day trip to Chicago</button>
+                    <button class="quick-reply">Find optimal flights to SFO next Tuesday</button>
+                    <button class="quick-reply">Suggest hotels near EXPO center Munich</button>
+                </div>
+                <div class="input-wrapper">
+                    <textarea id="user-input" placeholder="Describe your travel needs..." rows="1"
+                        oninput="this.style.height = '';this.style.height = this.scrollHeight + 'px'"></textarea>
+                    <button id="send-btn" title="Send Request"><i class="fa-solid fa-paper-plane"></i></button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Include Marked.js for Markdown parsing -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
