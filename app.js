@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const text = userInput.value.trim();
         if (!text) return;
 
-        const apiKey = "AIzaSyDEi6" + "2Q2WwLYovHEbV" + "FB4GPl0N11lG1eBk";
+        const apiKey = "AIzaSyAiWj4lVWzYmJ9St0B8TdqPBw94PK4FR74";
 
         // Add user message to UI and history
         appendMessage('user', text);
